@@ -1,0 +1,257 @@
+:root {
+    --blue: #0a3871;
+    --white1: #f3f5fc;
+    --white2: #d8dfe8;
+    --quaternary: #495057;
+    --gray: #343a40;
+    --fontFamily: 'Inter', sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: var(--white1);
+}
+
+.text {
+    position: absolute;
+    width: 42%;
+    height: 60%;
+    left: 12%;
+    top: 15%;
+    border: none;
+    font-family: var(--fontFamily);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    background-color: var(--white1);
+
+    &::placeholder {
+        color: var(--blue);
+    }
+
+    &:focus,
+    &:active {
+        border: none;
+        outline: none;
+
+    }
+}
+
+.terms {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 8px;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 80%;
+
+    p {
+        font-family: var(--fontFamily);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: var(--quaternary);
+        opacity: 0.8;
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+    }
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1% 0;
+    position: absolute;
+    width: 80%;
+    left: 12%;
+    top: 82%;
+
+}
+
+.btn-encrypt {
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    gap: 8px;
+    width: 25%;
+    background-color: var(--blue);
+    border-radius: 24px;
+    font-family: var(--fontFamily);
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    color: #fff;
+}
+
+.btn-decrypt {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+    gap: 8%;
+    width: 25%;
+    background: var(--white2);
+    border: 1px solid var(--blue);
+    border-radius: 24px;
+    font-family: var(--fontFamily);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 19px;
+    text-align: center;
+    color: var(--blue);
+
+    
+}
+
+.btn-encrypt, .btn-decrypt {
+    &:hover {
+        cursor: pointer;
+        margin: 0.3%;
+        width: 24.5%;
+        padding: 1.8%;
+    }
+}
+
+
+.encrypted {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 30%;
+    height: 90%;
+    left: 60%;
+    top: 5%;
+    background: #fff;
+    box-shadow: 0px 24px 32px -8px rgba(0,0,0,0.08);
+    border-radius: 32px;
+
+    img {
+        position: absolute;
+        width: 80%;
+        height: 50%;
+        top: 15%;
+    }
+}
+
+.encrypted-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    gap: 16px;
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    text-align: center;
+
+    h2 {
+        width: 60%;
+        font-family: var(--fontFamily);
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 120%;
+        text-align: center;
+        color: var(--gray);
+    }
+
+    p {
+        width: 80%;
+        font-family: var(--fontFamily);
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        text-align: center;
+        color: var(--quaternary);
+    }
+    
+}
+
+/* Responsive Design */
+
+@media ( max-width: 820px ) {
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .encrypt {
+        width: 100%;
+    }
+
+    .text {
+        width: 80%;
+        height: 60%;
+        left: 10%;
+        top: 5%;
+    }
+    
+    .terms {
+        width: 80%;
+        left: 10%;
+        top: 57%;
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .buttons {
+        width: 80%;
+        left: 10%;
+        top: 70%;
+    }
+
+    .btn-encrypt, .btn-decrypt {
+        width: 48%;
+        border-radius: 16px;
+
+        &:hover {
+            margin: 0.3%;
+            width: 47.5%;
+            padding: 1.8%;
+        }
+    }
+
+    .encrypted {
+        width: 80%;
+        height: 15%;
+        left: 10%;
+        top: 80%;
+
+        img {
+            top: 0;
+            display: none;
+            visibility: hidden;
+        }
+    }
+
+    .encrypted-message {
+        width: 100%;
+        top: 5%;
+
+    }
+
+}
+
+
